@@ -65,16 +65,17 @@ subgraph "Application class"
 end
 
 subgraph "Player class"
-    AW(Constructor: Player(name));
-    AW --> AX[Initialize currentScore];
-    AW --> AY[Initialize totalScore];
-    AX --> AZ(Constructor: Player(name));
-    AY --> BA[getName()];
-    BA --> BB[setName(name)];
-    BB --> BC[getCurrentScore()];
-    BC --> BD[setCurrentScore(currentScore)];
-    BD --> BE[getTotalScore()];
-    BE --> BF[setTotalScore(totalScore)];
+    AW[Constructor: Player(name)];
+    AX[Initialize currentScore];
+    AY[Initialize totalScore];
+    AX --> AW[Constructor: Player(name)];
+    AY --> AW[Constructor: Player(name)];
+    AW --> BA[getName()];
+    AW --> BB[setName(name)];
+    AW --> BC[getCurrentScore()];
+    AW --> BD[setCurrentScore(currentScore)];
+    AW --> BE[getTotalScore()];
+    AW --> BF[setTotalScore(totalScore)];
 end
 
 subgraph "Difficulty enum"
@@ -85,7 +86,7 @@ end
 subgraph "Die class"
     BI[Initialize numOfSides];
     BI --> BJ[Initialize faceValue];
-    BI --> BK(Constructor: Die(numOfSides, faceValue));
+    BI --> BK[Constructor: Die(numOfSides, faceValue)];
     BI --> BL[getNumOfSides()];
     BI --> BM[setNumOfSides(numOfSides)];
     BI --> BN[getFaceValue()];
@@ -96,14 +97,15 @@ subgraph "Die class"
 end
 
 subgraph "HumanPlayer class"
-    BS(Constructor: HumanPlayer(name));
+    BS[Constructor: HumanPlayer(name)];
 end
 
 subgraph "ComputerPlayer class"
-    BT(Constructor: ComputerPlayer(name));
-    BT --> BU(Constructor: ComputerPlayer(name, difficulty));
+    BT[Constructor: ComputerPlayer(name)];
+    BT --> BU[Constructor: ComputerPlayer(name, difficulty)];
     BT --> BV[getDifficulty()];
     BT --> BW[setDifficulty(difficulty)];
 end
+
 
 ```
