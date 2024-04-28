@@ -66,7 +66,8 @@ graph TD;
     end
 
     subgraph "Player class"
-       AW(Constructor: Player(name));
+       AW((Constructor: Player(name)));
+
 
         AW --> AX[Initialize currentScore];
         AW --> AY[Initialize totalScore];
