@@ -65,20 +65,19 @@ graph TD;
         AU --> AV[Create GUI object];
     end
 
-    subgraph "Player class"
-       AW((Constructor: Player(name)));
+  subgraph "Player class"
+    AW([Constructor: Player(name)]);
+    AW --> AX[Initialize currentScore];
+    AW --> AY[Initialize totalScore];
+    AX --> AZ[Constructor: Player(name)];
+    AY --> BA[getName()];
+    BA --> BB[setName(name)];
+    BB --> BC[getCurrentScore()];
+    BC --> BD[setCurrentScore(currentScore)];
+    BD --> BE[getTotalScore()];
+    BE --> BF[setTotalScore(totalScore)];
+end
 
-
-        AW --> AX[Initialize currentScore];
-        AW --> AY[Initialize totalScore];
-        AW --> AZ[Constructor: Player(name)];
-        AW --> BA[getName()];
-        AW --> BB[setName(name)];
-        AW --> BC[getCurrentScore()];
-        AW --> BD[setCurrentScore(currentScore)];
-        AW --> BE[getTotalScore()];
-        AW --> BF[setTotalScore(totalScore)];
-    end
 
     subgraph "Difficulty enum"
         BG[Initialize EASY];
